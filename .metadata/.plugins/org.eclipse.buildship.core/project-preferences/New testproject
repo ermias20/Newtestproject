@@ -1,0 +1,10 @@
+#
+#Mon Nov 11 13:22:58 IST 2019
+linkedResources=
+managedNatures=org.eclipse.jdt.core.javanature
+classpath=<?xml version\="1.0" encoding\="UTF-8"?>\n<classpath>\n<classpathentry kind\="lib" path\="C\:/Users/ermias/Desktop/New Gradle Test/lib/Image-Comparison.proxy.jar"/>\r\n<classpathentry kind\="lib" path\="C\:/Users/ermias/Desktop/New Gradle Test/lib/io.testproject.sdk.java.jar"/>\r\n</classpath>\n
+subprojectPaths=
+derivedResources=.gradle;build
+buildScriptPath=build.gradle
+managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><commands/>
+buildDir=build

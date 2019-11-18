@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Image-Comparison.proxy">
+    <archive path="C:/Users/ermias/Desktop/New testproject/lib/Image-Comparison.proxy.jar" />
+  </library>
+  <library name="io.testproject.sdk.java">
+    <archive path="C:/Users/ermias/Desktop/New testproject/io.testproject.sdk.java.jar" />
+  </library>
+</eclipse-userlibraries>
+

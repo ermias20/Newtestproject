@@ -1,0 +1,102 @@
+package main.java.io.testproject.generated.tests.eyerefract.Rounding;
+
+import io.appium.java_client.MobileElement;
+import main.java.io.testproject.generated.tests.eyerefract.*;
+import Pages.QuestionScreen;
+import main.java.io.testproject.generated.tests.eyerefract.Settings.RefractionSettings;
+import main.java.io.testproject.generated.tests.eyerefract.Settings.Settings;
+import main.java.io.testproject.generated.tests.eyerefract.Tools.CheckRounding;
+import main.java.io.testproject.generated.tests.eyerefract.Tools.Toolbar;
+import main.java.io.testproject.generated.tests.eyerefract.Tools.imageComparison;
+import io.testproject.java.annotations.v2.Test;
+import io.testproject.java.sdk.v2.drivers.AndroidDriver;
+import io.testproject.java.sdk.v2.drivers.actions.AndroidActions;
+import io.testproject.java.sdk.v2.enums.ExecutionResult;
+import io.testproject.java.sdk.v2.exceptions.FailureException;
+import io.testproject.java.sdk.v2.reporters.TestReporter;
+import io.testproject.java.sdk.v2.tests.AndroidTest;
+import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
+import io.testproject.proxy.addon.ImageComparison;
+import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
+import main.java.io.testproject.generated.tests.eyerefract.Attribiute;
+import main.java.io.testproject.generated.tests.eyerefract.io.BooleanCheck;
+import Pages.QuestionScreen;
+import main.java.io.testproject.generated.tests.eyerefract.Settings.RefractionSettings;
+import main.java.io.testproject.generated.tests.eyerefract.Settings.Settings;
+import main.java.io.testproject.generated.tests.eyerefract.Tools.imageComparison;
+import org.openqa.selenium.By;
+
+@Test(name = "EighthRounding", version = "1.0")
+
+public class EighthRounding implements AndroidTest {
+    ExecutionResult executionResult;
+    CompareTwoImages compareTwoImages;
+    Double ExamFileWFRightsphere;
+    Double ExamFileWFlefttsphere;
+    Double ExamFileFinalRightsphere;
+    Double ExamFileFinalLeftsphere;
+    Double ReportWFRightsphere;
+    Double ReporWFLeftsphere;
+    Double ReportFinalRightsphere;
+    Double ReportFinalLeftsphere;
+
+    public ExecutionResult execute(AndroidTestHelper helper) throws FailureException {
+        TestReporter report = helper.getReporter();
+        AndroidDriver driver = helper.getDriver();
+        AndroidActions test =  driver.testproject();
+        By examfile = By.id("open_data_management");
+
+        // open settings
+        Settings newSettings = new Settings(helper);
+        io.BooleanCheck.ReporterCheck(report, newSettings.OpenSettings(), "open settings ");
+        newSettings.OpenSettingsRefractionTab();
+        //open refraction settings and change vertical prism value
+        RefractionSettings RefractionTab = new RefractionSettings(helper);
+        io.BooleanCheck.ReporterCheck(report,RefractionTab.Eighth() , "0.125 sphere rounding chosen");
+        QuestionScreen newquestionscreen = new QuestionScreen(helper);
+        newquestionscreen.OpenQuestionScreen();
+        //measure
+        WfMeasurment newmeasure = new WfMeasurment(helper);
+        io.BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
+
+
+
+        test.clickIfVisible(examfile);
+       ExamFileMeasureData initexamfile = new ExamFileMeasureData(helper);
+        this.ExamFileWFRightsphere= initexamfile.WfRightSphere;
+        this.ExamFileWFlefttsphere=  initexamfile.WfLeftSphere;
+        this.ExamFileFinalRightsphere=  initexamfile.FinalRightSphere;
+        this.ExamFileFinalLeftsphere= initexamfile.FinalLeftSphere ;
+        CheckRounding checkWf = new CheckRounding();
+
+        io.BooleanCheck.ReporterCheck(report, checkWf.check(ExamFileWFRightsphere,0.125), "Exam file Right wf Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report, checkWf.check(ExamFileWFlefttsphere,0.125), "Exam file Left wf Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report, checkWf.check(ExamFileFinalRightsphere,0.125), "Exam file Right final Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report,  checkWf.check(ExamFileFinalLeftsphere,0.125), "Exam file Left final Sphere 0.125 rounding check");
+        test.clickIfVisible(By.id("printBtn"));
+        test.isVisible(By.id("printBtn"));
+
+        PdfReportMeasurmentData inioreportpage = new PdfReportMeasurmentData(helper);
+        inioreportpage.PdfReportWf();
+        inioreportpage.PdfReportFinal();
+        CheckRounding checkFinal = new CheckRounding();
+
+        this.ReportWFRightsphere= inioreportpage.WfRightSphere;
+        this.ReporWFLeftsphere=  inioreportpage.WfLeftSphere;
+        this.ReportFinalRightsphere=  inioreportpage.FinalRightSphere;
+        this.ReportFinalLeftsphere= inioreportpage.FinalLeftSphere ;
+        io.BooleanCheck.ReporterCheck(report, checkFinal.check(ReportWFRightsphere,0.125), "Report page Right wf Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report, checkFinal.check(ReporWFLeftsphere,0.125), "Report page Right wf Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report,  checkFinal.check(ReportFinalRightsphere,0.125), "Report page Right wf Sphere 0.125 rounding check");
+        io.BooleanCheck.ReporterCheck(report,  checkFinal.check(ReportFinalLeftsphere,0.125), "Report page Right wf Sphere 0.125 rounding check");
+
+
+
+
+
+        return ExecutionResult.PASSED;
+
+
+    }
+
+}

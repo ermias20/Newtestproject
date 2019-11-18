@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/../../out/test/classes"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$/../..">
+		<excludeFolder url="file://$MODULE_DIR$/../../out"/>
+	</contentEntry>
+	<lib name="Gradle: Image-Comparison.proxy" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/lib/Image-Comparison.proxy.jar!/"/>
+	</lib>
+	<lib name="Gradle: io.testproject.sdk.java" scope="COMPILE">
+		<relative-module-cls project-related="jar://$PROJECT_DIR$/io.testproject.sdk.java.jar!/"/>
+	</lib>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="EyeRefract.generated.New_testproject.main" target="1.8" />
+      <module name="EyeRefract.generated.New_testproject.test" target="1.8" />
+      <module name="newteest.main" target="1.8" />
+      <module name="newteest.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

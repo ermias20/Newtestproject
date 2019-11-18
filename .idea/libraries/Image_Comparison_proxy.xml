@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Image-Comparison.proxy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Image-Comparison.proxy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/Image-Comparison.proxy.jar!/" />
+    </SOURCES>
+  </library>
+</component>
