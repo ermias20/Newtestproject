@@ -1,12 +1,12 @@
 package Settings;
 
 
-import org.openqa.selenium.By;
-
+import Tools.ElementExists;
 import io.testproject.java.sdk.v2.drivers.AndroidDriver;
 import io.testproject.java.sdk.v2.drivers.actions.AndroidActions;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
+import org.openqa.selenium.By;
 
 public class Settings {
     public By Homebutton = By.id("home_icon");
@@ -24,19 +24,23 @@ public class Settings {
     AndroidDriver driver;
     TestReporter report;
     AndroidActions test;
-
+    AndroidTestHelper helper;
     public Settings(AndroidTestHelper helper)  {
         this.driver = helper.getDriver();
         this.report = helper.getReporter();
+        this.helper = helper;
+
         this.test = helper.getDriver().testproject();
         this.driver.setTimeout(15000);
 
     }
 
     public boolean OpenSettings() {
-        test.clickIfVisible(Homebutton);
+        ElementExists waitforhome = new ElementExists(helper);
+        waitforhome.clickOn(Homebutton,driver ,150000);
         return test.clickIfVisible(Settings);
     }
+
 
     public boolean OpenSettingsGeneralTab() {
         return test.clickIfVisible(SettingsGeneral);

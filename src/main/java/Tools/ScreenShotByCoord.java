@@ -55,10 +55,12 @@ public class ScreenShotByCoord {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
 // Copy the element screenshot to disk
-            File screenshotLocation = new File("Resources/Screenshots/" +imagepath+".png");
+            File screenshotLocation = new File("src/main/Resources/Screenshots/" +imagepath+".png");
+            System.out.println("absulute path"+screenshotLocation.getAbsolutePath());
             try {
-                FileUtils.copyFile(scrFile, screenshotLocation);
+                FileUtils.copyFile(scrFile, new File(screenshotLocation.getAbsolutePath()));
             } catch (IOException e) {
                 e.printStackTrace();
             }
