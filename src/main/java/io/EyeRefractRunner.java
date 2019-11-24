@@ -1,6 +1,6 @@
 package io;
 
-import VA.UnaidedVAMono;
+import QuickMode.WarningMessage;
 import io.testproject.java.execution.results.StepExecutionResult;
 import io.testproject.java.sdk.v2.Runner;
 
@@ -30,7 +30,7 @@ public class EyeRefractRunner {
     public static StepExecutionResult runCyl() throws Exception {
         runner = Runner.createAndroid(developerToken, deviceUdid, androidPackage, androidName);
 
-        return runner.run(new UnaidedVAMono(), true);
+        return runner.run(new WarningMessage(), true);
 
     }
 }

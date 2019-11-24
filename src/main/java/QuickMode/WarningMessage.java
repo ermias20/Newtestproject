@@ -1,10 +1,12 @@
-package VA;
+package QuickMode;
 
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
+import Tools.ElementExists;
+import io.Attribiute;
 import io.BooleanCheck;
-import io.Lm;
+import io.SphereBracketing;
 import io.WfMeasurment;
 import io.testproject.java.annotations.v2.Parameter;
 import io.testproject.java.annotations.v2.Test;
@@ -19,9 +21,11 @@ import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
 import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
 
-@Test(name = "LM va bino", version = "1.0")
 
-public class LMVABINO implements AndroidTest {
+
+@Test(name = "Warning Message", version = "1.0")
+
+public class WarningMessage implements AndroidTest {
     @Parameter(defaultValue = "1.5", direction = ParameterDirection.INPUT)
     public String Lmsphinterval;
     ExecutionResult executionResult;
@@ -31,6 +35,8 @@ public class LMVABINO implements AndroidTest {
     public AndroidActions test ;
     CompareTwoImages compareTwoImages;
     By CurrentStepHeader = By.id("selected_header_text");
+    By warningmessage = By.id("text");
+    By okbutton = By.id("ok_btn");
 
 
     public ExecutionResult execute(AndroidTestHelper helper) throws FailureException {
@@ -57,54 +63,44 @@ public class LMVABINO implements AndroidTest {
         if (!newquickmode.NewSphVerCheck()) {
             BooleanCheck.ReporterCheck(report, newquickmode.NewSphVer(), "turn off sphere verfication settings ");
         }
-        if (newquickmode.LmVaBinoCheck()) {
-            BooleanCheck.ReporterCheck(report, newquickmode.LmVaBino(), "turn on lm va bino settings ");
+        if (newquickmode.WarningBetweenstepsCheck()) {
+            BooleanCheck.ReporterCheck(report, newquickmode.WarningBetweensteps(), "turn on warning message settings ");
         }
-        MeasureandRefraction();
-        Opensettings();
-        newquickmode.swipedown();
-        if (!newquickmode.LmVaBinoCheck()) {
-            BooleanCheck.ReporterCheck(report, newquickmode.LmVaBino(), "turn off lm va bino settings ");
-        }
-        MeasureandRefraction();
+        Measure();
+        SphereBracketing newRightBracketing = new SphereBracketing(helper);
+        ElementExists checkwarningmessage = new ElementExists(helper);
+        By OccluderAttr = By.id("eye_right_toggle");
+
+        while (Attribiute.Checked(OccluderAttr, helper)) {
+
+            BooleanCheck.ReporterCheck(report, newRightBracketing.SelectRowOne(newRightBracketing.RightBracketRowOne),
+                    "Right eye bracketing : row 1");
+
+            BooleanCheck.ReporterCheck(report, newRightBracketing.SelectRowTwo(newRightBracketing.RightBracketRowTwo),
+                    "Right eye  bracketing : row 2");
+
+            BooleanCheck.ReporterCheck(report, newRightBracketing.ConfirmRowOne(newRightBracketing.RightConfirmRowOne),
+                    "Right eye  bracketing : confirm row 1");
+            if(checkwarningmessage.Exists(warningmessage)){
+                 BooleanCheck.ReporterCheck(report, checkwarningmessage.Exists(warningmessage), "does warning message visible ");
+                 BooleanCheck.ReporterCheck(report,  test.containsText(warningmessage,"I now switch to the left eye."), "does warning message contains text ");
+                 test.clickIfVisible(okbutton);
+                break;
+            }
+            }
+
+
 
         return ExecutionResult.PASSED;
 
     }
 
 
-    public void MeasureandRefraction() throws FailureException {
+    public void Measure() throws FailureException {
         QuestionScreen newexam = new QuestionScreen(helper);
         BooleanCheck.ReporterCheck(report, newexam.OpenQuestionScreen(), "new exam");
-
-        Lm addmanuallm = new Lm(helper);
-        addmanuallm.OpenManualLmDialog();
-        addmanuallm.EnterManualvalue(addmanuallm.RightSPh,-1.75);
-        addmanuallm.EnterManualvalue(addmanuallm.LeftSPh,-1.5);
-        addmanuallm.EnterManualvalue(addmanuallm.RightCyl,-1.25);
-        addmanuallm.EnterManualvalue(addmanuallm.LeftCyl,-0.75);
-        addmanuallm.EnterManualAxisvalue(addmanuallm.Rightaxis,45);
-        addmanuallm.EnterManualAxisvalue(addmanuallm.Leftaxis,90);
-        addmanuallm.CloseManualLmDialog();
-
         WfMeasurment newmeasure = new WfMeasurment(helper);
-        BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
-        try {
-            if(addmanuallm.DiffBetweenLmWf()){
-
-                addmanuallm.ConfirmVal();
-                BooleanCheck.ReporterCheck(report, true, "confirm diff between lm and wf");
-
-            }
-
-        }catch (NullPointerException e)
-        {
-            e.printStackTrace();
-            test.pause(3000);
-        }
-        BooleanCheck.ReporterCheck(report, test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                "LM VA measurement R&L"), "lm va step step shown");
-
+        newmeasure.StartMeasure();
 
 
     }

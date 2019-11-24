@@ -81,44 +81,43 @@ public class UnaidedVAMono implements AndroidTest {
 
         WfMeasurment newmeasure = new WfMeasurment(helper);
         BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
-        BooleanCheck.ReporterCheck(report, test.getText(CurrentStepHeader).contains("STEP 2 - FAR VISION\n" +
+        BooleanCheck.ReporterCheck(report, test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                 "Unaided VA measurement R&L"), "Unaided step shown");        SphereBracketing newBracketing = new SphereBracketing(helper);
-
-
-
     }
 
 
 
     public void CheckIfexist(Boolean vareport)   {
         ElementExists exists = new ElementExists(helper);
-        Boolean righverficationstep =  test.getText(CurrentStepHeader).contains("STEP 5 - FAR VISION\n" +
+        Boolean righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains ("FAR VISION\n" +
                 "Right eye verification");
-        Boolean stepthreerighverficationstep =  test.getText(CurrentStepHeader).contains("STEP 3 - FAR VISION\n" +
+        Boolean stepthreerighverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("STEP 3 - FAR VISION\n" +
                 "Right eye verification");
 
-        Boolean unaidedvastepBino  = test.getText(CurrentStepHeader).contains("STEP 2 - FAR VISION\n" +
+        Boolean unaidedvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                 "Unaided VA measurement R&L");
-        Boolean unaidedvastepR  = test.getText(CurrentStepHeader).contains("STEP 3 - FAR VISION\n" +
+        Boolean unaidedvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                 "Unaided VA measurement R");
-        Boolean unaidedvastepL= test.getText(CurrentStepHeader).contains("STEP 4 - FAR VISION\n"  + "Unaided VA measurement L");
+        Boolean unaidedvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"
+                + "Unaided VA measurement L");
         By next = By.id("advanced_next_step_btn");
 
         while (!righverficationstep) {
-            stepthreerighverficationstep =  test.getText(CurrentStepHeader).contains("STEP 3 - FAR VISION\n" +
+            stepthreerighverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                     "Right eye verification");
             if(stepthreerighverficationstep){
                 break;
             }
             driver.testproject().clickIfVisible(next);
 
-             righverficationstep =  test.getText(CurrentStepHeader).contains("STEP 5 - FAR VISION\n" +
+             righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                     "Right eye verification");
-             unaidedvastepBino  = test.getText(CurrentStepHeader).contains("STEP 2 - FAR VISION\n" +
+             unaidedvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                     "Unaided VA measurement R&L");
-             unaidedvastepR  = test.getText(CurrentStepHeader).contains("STEP 3 - FAR VISION\n" +
+             unaidedvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                     "Unaided VA measurement R");
-             unaidedvastepL= test.getText(CurrentStepHeader).contains("STEP 4 - FAR VISION\n"  + "Unaided VA measurement L");
+             unaidedvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"  +
+                     "Unaided VA measurement L");
 
             if (unaidedvastepBino) {
                 BooleanCheck.ReporterCheck(report, vareport, "Unaided bino  step found");
@@ -135,10 +134,7 @@ public class UnaidedVAMono implements AndroidTest {
         }
         ;
 
-        if (!unaidedvastepBino) {
-            BooleanCheck.ReporterCheck(report, vareport, "Unaided bino step not found");
 
-        }
         if (!unaidedvastepR) {
             BooleanCheck.ReporterCheck(report, vareport, "Unaided right step not found");
 
