@@ -39,4 +39,14 @@ public class ElementExists {
                 ExpectedConditions.elementToBeClickable(locator)));
         driver.findElement(locator).click();
     }
+
+
+
+    public static  void waitfotwoele(By ElementTwo,By ElementOne, AndroidDriver driver, int timeout)
+    {
+        final WebDriverWait wait = new WebDriverWait(driver, timeout);
+        wait.until(ExpectedConditions.or(
+                ExpectedConditions.presenceOfElementLocated(ElementOne),
+                ExpectedConditions.presenceOfElementLocated(ElementTwo)));
+    }
 }

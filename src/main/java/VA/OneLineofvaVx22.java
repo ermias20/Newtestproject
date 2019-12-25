@@ -15,7 +15,6 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -27,9 +26,6 @@ public class OneLineofvaVx22 implements AndroidTest {
     @Parameter(defaultValue = "1.5", direction = ParameterDirection.INPUT)
     public String Lmsphinterval;
     ExecutionResult executionResult;
-
-    CompareTwoImages compareTwoImages;
-
     By OccluderAttr = By.id("eye_right_toggle");
     String RightPolorizedFilter = "RightPolorizedFilter";
     By VALines = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[3]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.webkit.WebView[1]/android.webkit.WebView[1]/android.view.View[1]/android.view.View[2]/android.view.View[*]");

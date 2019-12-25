@@ -18,7 +18,6 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
 
 
@@ -33,7 +32,6 @@ public class WarningMessage implements AndroidTest {
     public TestReporter report ;
     public AndroidDriver driver ;
     public AndroidActions test ;
-    CompareTwoImages compareTwoImages;
     By CurrentStepHeader = By.id("selected_header_text");
     By warningmessage = By.id("text");
     By okbutton = By.id("ok_btn");

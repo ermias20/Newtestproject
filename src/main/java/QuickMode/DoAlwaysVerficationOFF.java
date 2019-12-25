@@ -6,6 +6,7 @@ import Settings.Settings;
 import Tools.ElementExists;
 import io.BooleanCheck;
 import io.WfMeasurment;
+import io.testproject.java.annotations.v2.Test;
 import io.testproject.java.sdk.v2.drivers.AndroidDriver;
 import io.testproject.java.sdk.v2.drivers.actions.AndroidActions;
 import io.testproject.java.sdk.v2.enums.ExecutionResult;
@@ -13,14 +14,13 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
+@Test(name = "Do Always Verfication off", version = "1.0")
 
 public class DoAlwaysVerficationOFF implements AndroidTest {
 
     ExecutionResult executionResult;
 
-    CompareTwoImages compareTwoImages;
 
     By CurrentStep = By.id("selected_header_text");
 

@@ -31,7 +31,7 @@ public class SphereBracketing {
         this.driver = helper.getDriver();
         this.report = helper.getReporter();
         this.test = helper.getDriver().testproject();
-        this.driver.setTimeout(2500);
+        this.driver.setTimeout(15000);
         this.helper = helper;
     }
 

@@ -1,3 +1,5 @@
+/*
+
 package Tools;
 
 import io.appium.java_client.MobileElement;
@@ -5,7 +7,6 @@ import io.testproject.java.sdk.v2.enums.ExecutionResult;
 import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
 import io.testproject.proxy.addon.ImageComparison;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +16,6 @@ public class imageComparison {
 
     AndroidTestHelper helper;
     ExecutionResult executionResult;
-    CompareTwoImages compareTwoImages;
 
 
     public ExecutionResult compareImage(AndroidTestHelper helper , String Name,  MobileElement ele) throws IOException, FailureException {
@@ -33,3 +33,5 @@ public class imageComparison {
         return executionResult;
     }
 }
+
+*/

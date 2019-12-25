@@ -15,7 +15,6 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
 
 import java.util.concurrent.TimeUnit;
@@ -25,7 +24,6 @@ public class SphereVerfication implements AndroidTest {
 
     ExecutionResult executionResult;
 
-    CompareTwoImages compareTwoImages;
 
     By CurrentStep = By.id("selected_header_text");
     @Parameter(defaultValue = "-1.5", direction = ParameterDirection.INPUT)

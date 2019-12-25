@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/main/java/Prism/HorizontalPrismIn.java" />
+    </excludeFromCompile>
     <bytecodeTargetLevel>
       <module name="EyeRefract.generated.New_testproject.main" target="1.8" />
       <module name="EyeRefract.generated.New_testproject.test" target="1.8" />

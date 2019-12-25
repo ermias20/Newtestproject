@@ -3,7 +3,6 @@ package VA;
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
-import Tools.imageComparison;
 import io.BooleanCheck;
 import io.WfMeasurment;
 import io.appium.java_client.MobileElement;
@@ -17,17 +16,13 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
-
-import java.io.IOException;
 
 @Test(name = "Polorized Filters", version = "1.0")
 
     public class PolorizedFilters implements AndroidTest {
         ExecutionResult executionResult;
 
-        CompareTwoImages compareTwoImages;
         @Parameter(defaultValue = "1.5", direction = ParameterDirection.INPUT)
         public String Lmsphinterval;
         By OccluderAttr = By.id("eye_right_toggle");
@@ -54,7 +49,7 @@ import java.io.IOException;
             BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
 
             MobileElement Rightele = (MobileElement) driver.findElementByXPath(RightOccludexpath);
-            imageComparison Rightcomparison = new imageComparison();
+           /* imageComparison Rightcomparison = new imageComparison();
         test.pause(1500);
 
         try {
@@ -64,11 +59,11 @@ import java.io.IOException;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+*/
         test.pause(1500);
 
             MobileElement Leftele = (MobileElement) driver.findElementByXPath(LeftOccludxpath);
-            imageComparison leftcomparison = new imageComparison();
+           /* imageComparison leftcomparison = new imageComparison();
             try {
 
                 BooleanCheck.ReporterCheck(report ,leftcomparison.compareImage(helper ,LeftPolorizedFilter  ,Leftele)==ExecutionResult.PASSED, " left polorized Filter image compare result");
@@ -76,7 +71,7 @@ import java.io.IOException;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+*/
 
 
             return ExecutionResult.PASSED;

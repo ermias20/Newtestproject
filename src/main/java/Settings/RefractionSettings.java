@@ -16,6 +16,7 @@ public class RefractionSettings {
     public By Occluder = By.id("change_occluder_type");
     public By ChangeSphereRounding = By.id("change_sphere_addition_rounding");
     public By ChangeOccluderbuttons = By.id("changeOccluderButtons");
+    public By ChangeCylSign = By.id("change_cyl_sign");
 
 
     public By VerticalUp = By.xpath("//*[@text='Up']");
@@ -28,6 +29,8 @@ public class RefractionSettings {
     public By Eighth = By.xpath("//*[@text='0.125']");
     public By RL = By.xpath("//*[@text='RL']");
     public By RBL = By.xpath("//*[@text='RL / RBL']");
+    public By Cylplus = By.xpath("//*[@text='+']");
+    public By CylMinus = By.xpath("//*[@text='+']");
     AndroidDriver driver;
     Reporter report;
     AndroidActions test;
@@ -43,6 +46,14 @@ public class RefractionSettings {
     public boolean SelectDots() {
         test.clickIfVisible(ChangeXcylTest);
         return test.clickIfVisible(XcylDots);
+    }
+
+    public boolean SelectCylplus() {
+        test.clickIfVisible(ChangeCylSign);
+        return test.clickIfVisible(Cylplus);
+    }  public boolean SelectCylMinus() {
+        test.clickIfVisible(ChangeCylSign);
+        return test.clickIfVisible(CylMinus);
     }
 
     public boolean SelectOptotype() {

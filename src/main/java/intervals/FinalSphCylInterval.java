@@ -14,7 +14,6 @@ import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
-import io.testproject.proxy.addon.io.testproject.addon.imagecomparison.actions.generic.CompareTwoImages;
 import org.openqa.selenium.By;
 
 @Test(name = "Final sphere and cylinder interval", version = "1.0")
@@ -22,7 +21,6 @@ import org.openqa.selenium.By;
 public class FinalSphCylInterval implements AndroidTest {
     ExecutionResult executionResult;
 
-    CompareTwoImages compareTwoImages;
     @Parameter(defaultValue = "1.5", direction = ParameterDirection.INPUT)
     public String sphinterval;
     @Parameter(defaultValue = "2.0", direction = ParameterDirection.INPUT)
