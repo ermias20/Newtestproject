@@ -61,7 +61,7 @@ public class WfMeasurment {
 
         report.step("Tap home button", HomeButtonResult, TakeScreenshotConditionType.Failure);
 
-        MoveToMeasureScreen = clickskipexception(Homebutton);
+        MoveToMeasureScreen = clickskipexception(MeasureScreen);
         report.step("Click on 'Measure' tab", MoveToMeasureScreen, TakeScreenshotConditionType.Failure);
 
 

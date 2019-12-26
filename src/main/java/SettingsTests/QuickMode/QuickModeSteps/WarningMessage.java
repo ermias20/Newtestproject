@@ -1,4 +1,4 @@
-package QuickMode;
+package SettingsTests.QuickMode.QuickModeSteps;
 
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;

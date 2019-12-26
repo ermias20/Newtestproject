@@ -4,7 +4,7 @@ version '1.0'
 apply plugin: 'java'
 
 // If necessary, update the location of TestProject SDK JAR file
-def TP_SDK = 'lib/io.testproject.sdk.java.jar'
+def TP_SDK = 'C:\\Users\\ermias\\Downloads\\TestProject_SDK_0.59.1.jar'
 compileJava.options.encoding = 'UTF-8'
 
 sourceCompatibility = 1.8
@@ -20,7 +20,7 @@ configurations {
 }
 // JAR Task
 jar {
-    assert file("${TP_SDK}").exists() : "TestProject SDK JAR file was not found, please update the TP_SDK variable"
+    assert file("${TP_SDK}").exists() : "TestProject SDK JAR file was not found, please update the TP_SDK variable"+TP_SDK
     archiveName "${rootProject.name}-${version}.jar"
     dependsOn configurations.runtime
     from {

@@ -1,14 +1,15 @@
+/*
 package Tools;
 
-import QuickMode.DoAlwaysVerficationON;
-import QuickMode.WarningMessage;
-import io.testproject.java.sdk.v2.enums.ExecutionResult;
+import SettingsTests.QuickMode.DoAlwaysVerfication.DoAlwaysVerficationON;
+import SettingsTests.QuickMode.QuickModeSteps.WarningMessage;
+import io.testproject.java.execution.results.ExecutionResult;
 import io.testproject.java.sdk.v2.exceptions.FailureException;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
 
 public class Runtest implements AndroidTest {
-    public   ExecutionResult execute (AndroidTestHelper helper) throws FailureException {
+    public io.testproject.java.sdk.v2.enums.ExecutionResult execute (AndroidTestHelper helper) throws FailureException {
 
         WarningMessage runwarning = new WarningMessage();
         runwarning.execute(helper);
@@ -22,3 +23,4 @@ public class Runtest implements AndroidTest {
     }
 
 }
+*/
