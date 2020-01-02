@@ -1,4 +1,4 @@
-package VA;
+package SettingsTests.QuickMode.VA;
 
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;

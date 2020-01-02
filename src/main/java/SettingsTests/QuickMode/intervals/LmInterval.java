@@ -43,6 +43,9 @@ public class LmInterval implements AndroidTest {
         QuickModeSettings newquickmode = new QuickModeSettings(helper);
 
         newquickmode.LmSphererIntervalStep(Lmsphinterval);
+        if(newquickmode.WarningBetweenstepsCheck()){
+            BooleanCheck.ReporterCheck(report, newquickmode.WarningBetweensteps(), "switch warning between steps off");
+        }
         // newquickmode.CylinderIntervalStep("1.5");
         QuestionScreen newquestionscreen = new QuestionScreen(helper);
         newquestionscreen.OpenQuestionScreen();

@@ -1,11 +1,11 @@
-package VA;
-
+package SettingsTests.QuickMode.VA;
 
 
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
 import Tools.ElementExists;
+import Tools.NextButton;
 import io.BooleanCheck;
 import io.SphereBracketing;
 import io.WfMeasurment;
@@ -81,8 +81,10 @@ public class UnaidedVAMono implements AndroidTest {
 
         WfMeasurment newmeasure = new WfMeasurment(helper);
         BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
+        NextButton nextbefore = new  NextButton(helper);
+        nextbefore.BeforeBracketNext();
         BooleanCheck.ReporterCheck(report, test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                "Unaided VA measurement R&L"), "Unaided step shown");        SphereBracketing newBracketing = new SphereBracketing(helper);
+                "Unaided SettingsTests.QuickMode.VA.VA measurement R&L"), "Unaided step shown");        SphereBracketing newBracketing = new SphereBracketing(helper);
     }
 
 
@@ -95,11 +97,11 @@ public class UnaidedVAMono implements AndroidTest {
                 "Right eye verification");
 
         Boolean unaidedvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                "Unaided VA measurement R&L");
+                "Unaided SettingsTests.QuickMode.VA.VA measurement R&L");
         Boolean unaidedvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                "Unaided VA measurement R");
+                "Unaided SettingsTests.QuickMode.VA.VA measurement R");
         Boolean unaidedvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"
-                + "Unaided VA measurement L");
+                + "Unaided SettingsTests.QuickMode.VA.VA measurement L");
         By next = By.id("advanced_next_step_btn");
 
         while (!righverficationstep) {
@@ -113,11 +115,11 @@ public class UnaidedVAMono implements AndroidTest {
              righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
                     "Right eye verification");
              unaidedvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                    "Unaided VA measurement R&L");
+                    "Unaided SettingsTests.QuickMode.VA.VA measurement R&L");
              unaidedvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                    "Unaided VA measurement R");
+                    "Unaided SettingsTests.QuickMode.VA.VA measurement R");
              unaidedvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"  +
-                     "Unaided VA measurement L");
+                     "Unaided SettingsTests.QuickMode.VA.VA measurement L");
 
             if (unaidedvastepBino) {
                 BooleanCheck.ReporterCheck(report, vareport, "Unaided bino  step found");

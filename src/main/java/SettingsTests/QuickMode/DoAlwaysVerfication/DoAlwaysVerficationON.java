@@ -4,6 +4,7 @@ import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
 import Tools.ElementExists;
+import Tools.NextButton;
 import io.BooleanCheck;
 import io.WfMeasurment;
 import io.testproject.java.annotations.v2.Test;
@@ -32,7 +33,7 @@ public class DoAlwaysVerficationON implements AndroidTest {
         BooleanCheck.ReporterCheck(report, newSettings.OpenSettings(), "open settings ");
         BooleanCheck.ReporterCheck(report, newSettings.OpenSettingsQuickmodeTab(), "open quick mode tab");
         QuickModeSettings newquickmode = new QuickModeSettings(helper);
-        if(newquickmode.CheckDoAlwaysVerficationeState()){
+        if(!newquickmode.CheckDoAlwaysVerficationeState()){
             BooleanCheck.ReporterCheck(report, newquickmode.DoAlwaysVerfication(), "do always settings selected");
         }
         QuestionScreen newexam= new QuestionScreen(helper);
@@ -40,8 +41,10 @@ public class DoAlwaysVerficationON implements AndroidTest {
 
         WfMeasurment newmeasure = new WfMeasurment(helper);
         BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
+        NextButton nextbefore = new  NextButton(helper);
+        nextbefore.BeforeBracketNext();
         ElementExists checkquickproapears = new ElementExists (helper);
-        BooleanCheck.ReporterCheck(report, test.getText(CurrentStep).contains("STEP 2 - FAR VISION\n" +
+        BooleanCheck.ReporterCheck(report, test.getText(CurrentStep).contains("STEP 5 - FAR VISION\n" +
                 "Right eye verification"), "va step shown before quick pro shown");
         BooleanCheck.ReporterCheck(report,true,"current step is "+ test.getText(CurrentStep));
         return ExecutionResult.PASSED;

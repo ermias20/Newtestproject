@@ -46,7 +46,15 @@ public class ElementExists {
     {
         final WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(ElementOne),
-                ExpectedConditions.presenceOfElementLocated(ElementTwo)));
+            ExpectedConditions.presenceOfElementLocated(ElementOne),
+            ExpectedConditions.presenceOfElementLocated(ElementTwo)));
+}
+
+
+    public String popup(By by) {
+        final WebDriverWait wait = new WebDriverWait(driver, 150000);
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by)).getText();
+
+
     }
 }

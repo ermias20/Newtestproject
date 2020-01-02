@@ -1,4 +1,4 @@
-package io;
+package SettingsTests.Measure;
 
 
 import Tools.ElementExists;
@@ -14,19 +14,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class WfMeasurment {
+public class KMeasure {
     public static AndroidDriver driver;
     public static TestReporter report;
     public static AndroidActions test;
     public static AndroidTestHelper helper;
     public boolean MoveToMeasureScreen;
-    public boolean StartMeasureButtonResult;
     public boolean LeftAccessoriesVisibile;
     public boolean HomeButtonResult = false;
     public boolean RightprogressBarResult;
 
     public String value;
-
 
     public By Homebutton = By.id("home_icon");
     public By MeasureScreen = By.xpath("//*[@text='MEASURE']");
@@ -37,7 +35,7 @@ public class WfMeasurment {
     public By Ok = By.id("ok_btn");
 
 
-    public WfMeasurment(AndroidTestHelper helper) {
+    public KMeasure(AndroidTestHelper helper) {
         this.driver = helper.getDriver();
         driver.setTimeout(15000);
         this.report = helper.getReporter();
@@ -50,7 +48,7 @@ public class WfMeasurment {
     public boolean clickskipexception(By by) {
         final WebDriverWait wait = new WebDriverWait(driver, 150000);
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(by)));
-                driver.findElement(by).click();
+        driver.findElement(by).click();
         return true;
     }
 
@@ -58,30 +56,23 @@ public class WfMeasurment {
     public boolean StartMeasure() throws FailureException {
         HomeButtonResult =   clickskipexception(Homebutton);
         report.step("Tap home button", HomeButtonResult, TakeScreenshotConditionType.Failure);
-
         MoveToMeasureScreen = clickskipexception(MeasureScreen);
         report.step("Click on 'Measure' tab", MoveToMeasureScreen, TakeScreenshotConditionType.Failure);
         ElementExists waitforhome = new ElementExists(helper);
         clickskipexception(StartMeasureButton);
 
+       // wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(by)));
+
+        /*AndroidDriver wait = new FluentWait<AndroidDriver>(driver)
+                .withTimeout(12, TimeUnit.SECONDS)
+                .pollingEvery(2, TimeUnit.SECONDS)
+                .ignoring(NoSuchElementException.class);*/
+
         try {
-         /*   ElementExists measurestopped = new ElementExists(helper);
             By popupmessage = By.id("message_content");
-
-            report.step("meaasurment stopped messsage",   measurestopped.Exists(popupmessage), TakeScreenshotConditionType.Always);*/
-
-
+            report.step("meaasurment stopped messsage",   waitforhome.Exists(popupmessage), TakeScreenshotConditionType.Always);
             String progressbar = driver.testproject().getText(RightprogressBar);
 
-            if (progressbar == "0") {
-                RightprogressBarResult = false;
-                System.out.println("fail exception");
-                report.step("progress bar", RightprogressBarResult, TakeScreenshotConditionType.Always);
-            } else {
-                RightprogressBarResult = true;
-                System.out.println("pass");
-                report.step("progress bar", RightprogressBarResult, TakeScreenshotConditionType.Failure);
-            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,31 +81,29 @@ public class WfMeasurment {
         ElementExists wait = new ElementExists(helper);
 
         try
-    {
+        {
 
-        wait.waitfotwoele(Measureproblem,QuickPro,driver,240000);
+            wait.waitfotwoele(Measureproblem,QuickPro,driver,240000);
+
+            driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+            boolean Measureproblemexists = driver.findElements(Measureproblem).size() != 0;
+            if(Measureproblemexists){
+                driver.testproject().clickIfVisible(Ok) ;
+            }
+            boolean LeftAccessoriesExist = driver.findElements(QuickPro).size() != 0;
+            if(LeftAccessoriesExist){
+                report.step("Is refraction page visible?", LeftAccessoriesVisibile,
+                        TakeScreenshotConditionType.Failure);
+            }
 
 
 
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        boolean Measureproblemexists = driver.findElements(Measureproblem).size() != 0;
-        if(Measureproblemexists){
-            driver.testproject().clickIfVisible(Ok) ;
+        } catch(Exception e)
+
+        {
         }
-        boolean LeftAccessoriesExist = driver.findElements(QuickPro).size() != 0;
-        if(LeftAccessoriesExist){
-            report.step("Is refraction page visible?", LeftAccessoriesVisibile,
-                    TakeScreenshotConditionType.Failure);
-        }
-
-
-
-    } catch(Exception e)
-
-    {
-    }
         return true;
-}
+    }
 
 }
 

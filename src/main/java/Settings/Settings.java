@@ -2,6 +2,7 @@ package Settings;
 
 
 import Tools.ElementExists;
+import io.BooleanCheck;
 import io.testproject.java.sdk.v2.drivers.AndroidDriver;
 import io.testproject.java.sdk.v2.drivers.actions.AndroidActions;
 import io.testproject.java.sdk.v2.reporters.TestReporter;
@@ -20,6 +21,10 @@ public class Settings {
     public By SettingsExport = By.xpath("//*[@text='Export']");
     public By SettingsChart = By.xpath("//*[@text='Chart display / Near vision tablet']");
     public By SettingsMaintenance = By.xpath("//*[@text='Maintenance']");
+    String xpathExpression = "//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]";
+    public By SettingsHeader = By.xpath(xpathExpression);
+
+
     public By ChangeXcylTest = By.id("change_xcyl_tests");
     AndroidDriver driver;
     TestReporter report;
@@ -36,9 +41,26 @@ public class Settings {
     }
 
     public boolean OpenSettings() {
+    Boolean success ;
         ElementExists waitforhome = new ElementExists(helper);
-        waitforhome.clickOn(Homebutton,driver ,150000);
-        return test.clickIfVisible(Settings);
+        BooleanCheck log = new BooleanCheck();
+        if(waitforhome.Exists(SettingsHeader))
+        {
+            success=true;
+            log.ReporterCheck(report ,success,"settings page already opened");
+            success = true;
+        }
+        else
+            {
+                success = true;
+                waitforhome.clickOn(Homebutton,driver ,150000);
+            test.clickIfVisible(Settings);
+                log.ReporterCheck(report ,success,"settings page  opened");
+
+            }
+
+
+        return success;
     }
 
 

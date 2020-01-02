@@ -1,8 +1,10 @@
-package VA;
+package SettingsTests.QuickMode.VA;
 
 import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
+import Tools.ElementExists;
+import Tools.NextButton;
 import io.BooleanCheck;
 import io.Lm;
 import io.WfMeasurment;
@@ -18,9 +20,9 @@ import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
 import org.openqa.selenium.By;
 
-@Test(name = "LM va bino", version = "1.0",description = "")
+@Test(name = "LM va mono", version = "1.0")
 
-public class LMVABINO implements AndroidTest {
+public class LMVAMono implements AndroidTest {
     @Parameter(defaultValue = "1.5", direction = ParameterDirection.INPUT)
     public String Lmsphinterval;
     ExecutionResult executionResult;
@@ -58,13 +60,21 @@ public class LMVABINO implements AndroidTest {
         if (newquickmode.LmVaBinoCheck()) {
             BooleanCheck.ReporterCheck(report, newquickmode.LmVaBino(), "turn on lm va bino settings ");
         }
+        if (newquickmode.LmVaMonocheck()) {
+            BooleanCheck.ReporterCheck(report, newquickmode.LmVaMono(), "turn on lm va mono settings ");
+        }
         MeasureandRefraction();
+        CheckIfexist(true);
         Opensettings();
         newquickmode.swipedown();
         if (!newquickmode.LmVaBinoCheck()) {
             BooleanCheck.ReporterCheck(report, newquickmode.LmVaBino(), "turn off lm va bino settings ");
         }
+        if (!newquickmode.LmVaMonocheck()) {
+            BooleanCheck.ReporterCheck(report, newquickmode.LmVaMono(), "turn off lm va mono settings ");
+        }
         MeasureandRefraction();
+        CheckIfexist(true);
 
         return ExecutionResult.PASSED;
 
@@ -95,19 +105,73 @@ public class LMVABINO implements AndroidTest {
 
             }
 
-        }catch (NullPointerException e)
+        }catch (Exception e)
         {
-            e.printStackTrace();
-            test.pause(3000);
+
         }
+        NextButton nextbefore = new  NextButton(helper);
+        nextbefore.BeforeBracketNext();
         BooleanCheck.ReporterCheck(report, test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
-                "LM VA measurement R&L"), "lm va step step shown");
+                "LM SettingsTests.QuickMode.VA.VA measurement R&L"), "lm va step step shown");
 
 
 
     }
 
+    public void CheckIfexist(Boolean vareport)   {
+        ElementExists exists = new ElementExists(helper);
+        Boolean righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains ("FAR VISION\n" +
+                "Right eye verification");
+        Boolean LmvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                "LM SettingsTests.QuickMode.VA.VA measurement R&L");
+        Boolean LMvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                "LM SettingsTests.QuickMode.VA.VA measurement R");
+        Boolean LMvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"
+                + "LM SettingsTests.QuickMode.VA.VA measurement L");
+        By next = By.id("advanced_next_step_btn");
 
+        while (!righverficationstep) {
+            righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                    "Right eye verification");
+            if(righverficationstep){
+                break;
+            }
+            driver.testproject().clickIfVisible(next);
+
+            righverficationstep =  test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                    "Right eye verification");
+            LmvastepBino  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                    "LM SettingsTests.QuickMode.VA.VA measurement R&L");
+            LMvastepR  = test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n" +
+                    "LM SettingsTests.QuickMode.VA.VA measurement R");
+            LMvastepL= test.getText(CurrentStepHeader).substring(8).contains("FAR VISION\n"  +
+                    "LM SettingsTests.QuickMode.VA.VA measurement L");
+
+            if (LmvastepBino) {
+                BooleanCheck.ReporterCheck(report, vareport, "LM bino  step found");
+
+            }
+            if (LMvastepR) {
+                BooleanCheck.ReporterCheck(report, vareport, "LM right step found");
+
+            }
+            if (LMvastepL) {
+                BooleanCheck.ReporterCheck(report, vareport, "LM left step found");
+                break;
+            }
+        }
+        ;
+
+
+        if (!LMvastepR) {
+            BooleanCheck.ReporterCheck(report, vareport, "LM right step not found");
+
+        }
+        if (!LMvastepL) {
+            BooleanCheck.ReporterCheck(report, vareport, "LM left step not found");
+        }
+
+    }
 
     public void Opensettings()  {
 

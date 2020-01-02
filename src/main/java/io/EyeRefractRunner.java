@@ -1,6 +1,6 @@
 package io;
 
-import SettingsTests.QuickMode.QuickModeSteps.BinoBalance;
+import SettingsTests.QuickMode.VA.UnaidedVAbino;
 import io.testproject.java.execution.results.StepExecutionResult;
 import io.testproject.java.sdk.v2.Runner;
 
@@ -21,14 +21,13 @@ public class EyeRefractRunner {
         } catch (Exception e) {
         }
     }
-
     /**
      * Runs "Cyl"
      */
     public static StepExecutionResult runCyl() throws Exception {
         runner = Runner.createAndroid(developerToken, deviceUdid, androidPackage, androidName);
 
-        return runner.run(new BinoBalance(), true);
+        return runner.run(new UnaidedVAbino(), true);
 
     }
 }

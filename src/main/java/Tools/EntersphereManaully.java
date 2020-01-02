@@ -25,15 +25,16 @@ public class EntersphereManaully {
         double CurrentLmValue = Double.parseDouble(test.getText(by));
         double sum =  Double.sum(CurrentLmValue ,spherevalue);
 
-
-        while (sum != CurrentLmValue) {
+            while (sum != CurrentLmValue) {
             if(spherevalue>0){
                 test.clickIfVisible(plus);
             }else{
                 test.clickIfVisible(minus);
             }
             CurrentLmValue = Double.parseDouble(test.getText(by));
-
+             if (CurrentLmValue>sum||CurrentLmValue==sum){
+                  break;
+                 }
         }
     }
 

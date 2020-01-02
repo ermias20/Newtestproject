@@ -4,6 +4,7 @@ import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
 import Tools.EntersphereManaully;
+import Tools.NextButton;
 import io.*;
 import io.testproject.java.annotations.v2.Parameter;
 import io.testproject.java.annotations.v2.Test;
@@ -16,8 +17,6 @@ import io.testproject.java.sdk.v2.reporters.TestReporter;
 import io.testproject.java.sdk.v2.tests.AndroidTest;
 import io.testproject.java.sdk.v2.tests.helpers.AndroidTestHelper;
 import org.openqa.selenium.By;
-
-import java.util.concurrent.TimeUnit;
 @Test(name = "Sphere Verfication", version = "1.0")
 
 public class SphereVerfication implements AndroidTest {
@@ -51,6 +50,11 @@ public class SphereVerfication implements AndroidTest {
 
         WfMeasurment newmeasure = new WfMeasurment(helper);
         BooleanCheck.ReporterCheck(report, newmeasure.StartMeasure(), "Measurement done");
+
+
+        NextButton nextbefore = new  NextButton(helper);
+        nextbefore.BeforeBracketNext();
+
         SphereBracketing newBracketing = new SphereBracketing(helper);
         newBracketing.bracketrighteye();
         newBracketing.bracketlefteye();
@@ -75,16 +79,7 @@ public class SphereVerfication implements AndroidTest {
 
 
         By export = By.id("advanced_export_btn");
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        boolean exists = driver.findElements(export).size() != 0;
-        By b = By.id("advanced_next_step_btn");
-        while (!exists) {
-            driver.testproject().clickIfVisible(b);
-            exists = driver.findElements(export).size() != 0;
-        }
-        ;
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-
+        nextbefore.AfterBracketNext();
         driver.testproject().click(export);
         driver.testproject().isVisible(By.id("measurement_list"));
 
@@ -112,7 +107,7 @@ public class SphereVerfication implements AndroidTest {
         BooleanCheck.ReporterCheck(report,finalreportdata.FinalLeftSphere==NewsphLeft,"comparison between sphere verfication left sphere and report page sphere");
 
 
-
+        driver.navigate().back();
 
         return ExecutionResult.PASSED;
 

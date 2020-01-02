@@ -13,28 +13,28 @@ public class QuickModeSettings {
     public By CylinderIntervalStep = By.id("change_obj_cylinder_interval_step");
     public By LmSphererIntervalStep = By.id("change_lm_sphere_interval_step");
     public By LmCylinderIntervalStep = By.id("change_lm_cylinder_interval_step");
-    public By PolarizedFilter = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[7]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By OneLineVa= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[8]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By PolarizedFilter = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[7]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]");
+    public By OneLineVa= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[7]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
     public By Changeoptotype= By.id("change_optotype");
-    public By binocularBalance= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[10]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By binocularBalance= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[9]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
     public By newbinocularBalance= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By newdowalways= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[3]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By newsphereverfication= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[4]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By Doalwaysverfication= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[11]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By SphereVerficationSwitch= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[12]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]\n");
+    public By newdowalways= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[11]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]");
+    public By newsphereverfication= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[12]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]");
+    public By Doalwaysverfication= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[10]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By SphereVerficationSwitch= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[11]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
     public By SphereVerficationTest= By.id("change_sphere_test");
     public By Optotype = By.xpath("//*[@text='Letters']");
     public By Number = By.xpath("//*[@text='Numbers']");
     public By SphereVerOptotype = By.xpath("//*[@text='Optotype']");
     public By SphereVerRedGreen = By.xpath("//*[@text='Red Green']");
     public By SphereVerJacksoncross = By.xpath("//*[@text='Jackson cross']");
-    public By ByVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By ByVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[7]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By ByLMVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[8]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By ByLMVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[9]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By ByUnaidedVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[10]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By ByUnaidedVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[11]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
-    public By warningmessage= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[12]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[6]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[7]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByLMVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[8]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByLMVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[9]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByUnaidedVAbino= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[10]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By ByUnaidedVAmono= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[11]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
+    public By warningmessage= By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ScrollView[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[12]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.Switch[1]");
 
 
     AndroidDriver driver;
@@ -72,7 +72,7 @@ public class QuickModeSettings {
         return test.clickIfVisible(PolarizedFilter);
     }
     public boolean CheckPolorizedFilterState() {
-        return Attribiute.Checked(PolarizedFilter,helper);
+        return Attribiute.Enabled(PolarizedFilter,helper);
 
     }
     public boolean OneLineofVa() {
@@ -95,14 +95,14 @@ public class QuickModeSettings {
         return test.clickIfVisible(binocularBalance);
     }
     public boolean CheckbinocularBalanceState() {
-        return Attribiute.Checked(binocularBalance,helper);
+        return Attribiute.Enabled(binocularBalance,helper);
 
     }
     public boolean DoAlwaysVerfication() {
         return test.clickIfVisible(Doalwaysverfication);
     }
     public boolean CheckDoAlwaysVerficationeState() {
-        return Attribiute.Checked(Doalwaysverfication,helper);
+        return Attribiute.Enabled(Doalwaysverfication,helper);
     }
 
 
@@ -110,7 +110,7 @@ public class QuickModeSettings {
         return test.clickIfVisible(SphereVerficationSwitch);
     }
     public boolean CheckSphereVerficationSwitchState() {
-        return Attribiute.Checked(SphereVerficationSwitch,helper);
+        return Attribiute.Enabled(SphereVerficationSwitch,helper);
     }
 
     public boolean EnterSphereVerficationTest( String testname) {
@@ -142,72 +142,94 @@ public class QuickModeSettings {
 
 
     public boolean NewVaBinobalanceCheck() {
-        return Attribiute.Checked(newbinocularBalance,helper);
+        return Attribiute.Enabled(binocularBalance,helper);
 
     } public boolean   NewVaBinobalance() {
-        return test.clickIfVisible(newbinocularBalance);
+        return test.clickIfVisible(binocularBalance);
     }
 
 
 
     public boolean NewSphVerCheck() {
-        return Attribiute.Checked(newsphereverfication,helper);
+        return Attribiute.Enabled(newsphereverfication,helper);
 
     } public boolean   NewSphVer() {
         return test.clickIfVisible(newsphereverfication);
     }
 
     public boolean NewdoalwaysCheck() {
-        return Attribiute.Checked(newdowalways,helper);
+        return Attribiute.Enabled(newdowalways,helper);
 
     } public boolean   Newdoalways() {
+
         return test.clickIfVisible(newdowalways);
     }
 
     public boolean VaBinoCheck() {
-        return Attribiute.Checked(ByVAbino,helper);
+        swipedown();
+
+        return Attribiute.Enabled(ByVAbino,helper);
 
     } public boolean   VaMono() {
         return test.clickIfVisible(ByVAmono);
     }
     public boolean VaMonocheck() {
-        return Attribiute.Checked(ByVAmono,helper);
+        swipedown();
+
+        return Attribiute.Enabled(ByVAmono,helper);
 
     } public boolean   LmVaBino() {
+        swipedown();
+
         return test.clickIfVisible(ByLMVAbino);
     }
     public boolean LmVaBinoCheck() {
-        return Attribiute.Checked(ByLMVAbino,helper);
+        swipedown();
+
+        return Attribiute.Enabled(ByLMVAbino,helper);
 
     } public boolean   LmVaMono() {
         return test.clickIfVisible(ByLMVAmono);
     }
     public boolean LmVaMonocheck() {
 
+        swipedown();
+        test.pause(2000);
 
-        return Attribiute.Checked(ByLMVAmono,helper);
+        return Attribiute.Enabled(ByLMVAmono,helper);
 
     } public boolean   UnaidedVaBino() {
         return test.clickIfVisible(ByUnaidedVAbino);
     }
     public boolean UnaidedVaBinoCheck() {
 
+        swipedown();
+        test.pause(2000);
 
-        return Attribiute.Checked(ByUnaidedVAbino,helper);
+        return Attribiute.Enabled(ByUnaidedVAbino,helper);
 
     } public boolean   UnaidedVaMono() {
+        swipedown();
+        test.pause(2000);
+
         return test.clickIfVisible(ByUnaidedVAmono);
     }
     public boolean UnaidedVaMonocheck() {
+        swipedown();
+        test.pause(2000);
 
-        return Attribiute.Checked(ByUnaidedVAmono,helper);
+        return Attribiute.Enabled(ByUnaidedVAmono,helper);
 
     } public boolean   WarningBetweensteps() {
+        swipedown();
+        test.pause(2000);
+
         return test.clickIfVisible(warningmessage);
     }
     public boolean WarningBetweenstepsCheck() {
-
-        return Attribiute.Checked(warningmessage,helper);
+        swipedown();
+        test.pause(2000);
+        return Attribiute.Enabled(warningmessage,helper);
 
     }
 

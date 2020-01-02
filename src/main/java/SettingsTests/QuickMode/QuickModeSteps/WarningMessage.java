@@ -4,6 +4,7 @@ import Pages.QuestionScreen;
 import Settings.QuickModeSettings;
 import Settings.Settings;
 import Tools.ElementExists;
+import Tools.NextButton;
 import io.Attribiute;
 import io.BooleanCheck;
 import io.SphereBracketing;
@@ -65,6 +66,8 @@ public class WarningMessage implements AndroidTest {
             BooleanCheck.ReporterCheck(report, newquickmode.WarningBetweensteps(), "turn on warning message settings ");
         }
         Measure();
+        NextButton nextbefore = new  NextButton(helper);
+        nextbefore.BeforeBracketNext();
         SphereBracketing newRightBracketing = new SphereBracketing(helper);
         ElementExists checkwarningmessage = new ElementExists(helper);
         By OccluderAttr = By.id("eye_right_toggle");

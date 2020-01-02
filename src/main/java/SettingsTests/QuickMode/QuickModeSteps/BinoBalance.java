@@ -27,9 +27,10 @@ public class BinoBalance implements AndroidTest {
 
     ExecutionResult executionResult;
 
-    By binobalancetest = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[3]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]");
-    String RightOccludexpath = "//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[3]";
-    String LeftOccludxpath = "//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[2]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.ImageView[3]";
+    By binobalancetest = By.xpath("//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[3]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.LinearLayout[1]");
+    String RightOccludexpath = "//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[1]/android.widget.ImageView[3]";
+
+    String LeftOccludxpath   = "//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/androidx.drawerlayout.widget.DrawerLayout[1]/android.widget.RelativeLayout[1]/android.widget.FrameLayout[1]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.RelativeLayout[2]/android.widget.RelativeLayout[1]/android.widget.ImageView[4]";
 
     By CurrentStepHeader = By.id("selected_header_text");
     By CurrentStepText = By.id("selected_desc_text");
@@ -76,7 +77,7 @@ public class BinoBalance implements AndroidTest {
         BooleanCheck.ReporterCheck(report, newSettings.OpenSettings(), "open settings ");
         BooleanCheck.ReporterCheck(report, newSettings.OpenSettingsQuickmodeTab(), "open quick mode tab");
         QuickModeSettings newquickmode = new QuickModeSettings(helper);
-        if(newquickmode.CheckbinocularBalanceState()){
+        if(!newquickmode.CheckbinocularBalanceState()){
             BooleanCheck.ReporterCheck(report, newquickmode.binocularBalance(), "binocular settings selected");
         }
 
@@ -92,7 +93,7 @@ public class BinoBalance implements AndroidTest {
         newBracketing.bracketlefteye();
 
         //bino balance step
-        BooleanCheck.ReporterCheck(report,test.getText(CurrentStepHeader).contains("STEP 4 - FAR VISION\n" +
+        BooleanCheck.ReporterCheck(report,test.getText(CurrentStepHeader).contains("STEP 7 - FAR VISION\n" +
                 "Binocular balance") , "sphere verification step shown");
         BooleanCheck.ReporterCheck(report,test.getText(CurrentStepText).contains(binobalancefirstquestion) , "bino balance first step shown step shown");
         BooleanCheck.ReporterCheck(report,true,"current step is "+ test.getText(CurrentStepHeader));
@@ -108,14 +109,14 @@ public class BinoBalance implements AndroidTest {
 
         BaseCompareImages action = new BaseCompareImages();
         action.setThreshold("15");
-        File Resourcesdirectory = new File("src/main/Resources/RightPolorizedFilter.png");
-        File Screenshotdirectory = new File("src/main/Resources/Screenshots/RightPolorizedFilter.png");
-        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(Resourcesdirectory,Screenshotdirectory,report) ==ExecutionResult.PASSED, "Right Polorized Filter bino balance image compare result");
+        File Resourcesdirectory = new File("src/main/Resources/Red.png");
+        File Screenshotdirectory = new File("src/main/Resources/Screenshots/Red.png");
+        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(Resourcesdirectory,Screenshotdirectory,report) ==ExecutionResult.PASSED, "Red Filter bino balance image compare result");
 
 
 
         takescreenshot.ScreenShot(Leftele, Leftpolorized);
-        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftPolorizedFilter.png"),new File("src/main/Resources/Screenshots/LeftPolorizedFilter.png"),report) ==ExecutionResult.PASSED, "Left Polorized Filter bino balance image compare result");
+        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftOpaque.png"),new File("src/main/Resources/Screenshots/LeftOpaque.png"),report) ==ExecutionResult.PASSED, "Left Polorized Filter bino balance image compare result");
 
         takescreenshot.ScreenShot(BinoTest, binotest);
         BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/Binotest.png"),new File("src/main/Resources/Screenshots/Binotest.png"),report) ==ExecutionResult.PASSED, " compare bino balance test");
@@ -123,9 +124,9 @@ public class BinoBalance implements AndroidTest {
 
 
     test.clickIfVisible(closebinotest);
-        takescreenshot.ScreenShot(Leftele, "LeftOpaque");
-        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftPolorizedFilter.png"),new File("src/main/Resources/Screenshots/LeftPolorizedFilter.png"),report) ==ExecutionResult.PASSED, "Check there is no polorized step after bino balance closed");
-        BooleanCheck.ReporterCheck(report ,!test.getText(CurrentStepHeader).contains("STEP 4 - FAR VISION\n" +
+        /*takescreenshot.ScreenShot(Leftele, "RightOpaque");
+        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftOpaque.png"),new File("src/main/Resources/Screenshots/LeftOpaque.png"),report) ==ExecutionResult.PASSED, "Check there is no polorized step after bino balance closed");
+     */   BooleanCheck.ReporterCheck(report ,!test.getText(CurrentStepHeader).contains("STEP 7 - FAR VISION\n" +
                 "Binocular balance"), " after bino step closes check that step is not bino balance");
 
 
@@ -139,10 +140,10 @@ public class BinoBalance implements AndroidTest {
 
         takescreenshot.ScreenShot(Rightele, Rightpolorized);
 
-        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/RightPolorizedFilter.png"),new File("src/main/Resources/Screenshots/RightPolorizedFilter.png"),report) ==ExecutionResult.PASSED, "Right Polorized Filter bino balance image compare result");
+        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/Red.png"),new File("src/main/Resources/Screenshots/Red.png"),report) ==ExecutionResult.PASSED, "Right Polorized Filter bino balance image compare result");
 
         takescreenshot.ScreenShot(Leftele, Leftpolorized);
-        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftPolorizedFilter.png"),new File("src/main/Resources/Screenshots/LeftPolorizedFilter.png"),report) ==ExecutionResult.PASSED, "Left Polorized Filter bino balance image compare result");
+        BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/LeftOpaque.png"),new File("src/main/Resources/Screenshots/LeftOpaque.png"),report) ==ExecutionResult.PASSED, "Left Polorized Filter bino balance image compare result");
 
         takescreenshot.ScreenShot(BinoTest, Toprow);
         BooleanCheck.ReporterCheck(report, action.compareImagesUtils(new File("src/main/Resources/ToprowBinotest.png"),new File("src/main/Resources/Screenshots/ToprowBinotest.png"),report) ==ExecutionResult.PASSED, " compare top row bino balance test");
